@@ -17,7 +17,7 @@ class DeleteAppCommand extends BaseCommand {
 }
 
 DeleteAppCommand.flags = buildFlags();
-DeleteAppCommand.description = `Deletes your integration (including all versions).
+DeleteAppCommand.description = `Delete your integration (including all versions).
 
 This only works if there are no active users or Zaps on any version. If you only want to delete certain versions, use the \`${cyan(
   'zapier delete:version'

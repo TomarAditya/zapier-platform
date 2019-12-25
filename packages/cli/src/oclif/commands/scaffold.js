@@ -207,7 +207,7 @@ ScaffoldCommand.examples = [
   'zapier scaffold trigger "Existing Create" --force'
 ];
 
-ScaffoldCommand.description = `Adds a starting resource, trigger, action or search to your app.
+ScaffoldCommand.description = `Adds a starting resource, trigger, action, or search to your integration.
 
 The first argument should one of \`resource|trigger|search|create\` followed by the name of the file.
 

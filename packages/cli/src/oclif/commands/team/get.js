@@ -46,7 +46,7 @@ class TeamListCommand extends ZapierBaseCommand {
 }
 
 TeamListCommand.flags = buildFlags({ opts: { format: true } });
-TeamListCommand.description = `Get a list of team members involved with your app.
+TeamListCommand.description = `Get team members involved with your integration.
 
 These users come in two levels:
 

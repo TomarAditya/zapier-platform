@@ -17,7 +17,7 @@ class UploadCommand extends BaseCommand {
 }
 
 UploadCommand.flags = buildFlags();
-UploadCommand.description = `Uploads the latest build of your app to Zapier
+UploadCommand.description = `Uploads the latest build of your integration to Zapier.
 
 This command sends both ${BUILD_PATH} and ${SOURCE_PATH} to Zapier for use.
 

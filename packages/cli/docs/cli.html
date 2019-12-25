@@ -328,10 +328,10 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Shows the status of the analytics that are collected. Also used to change what is collected.</p>
+<p>Show the status of the analytics that are collected. Also used to change what is collected.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier analytics</code></p><p><strong>Flags</strong></p><ul>
 <li><code>-m, --mode</code> | Choose how much information to share. Anonymous mode drops the OS type and Zapier user id, but keeps command info. Identifying information is used only for debugging purposes. One of <code>[enabled | anonymous | disabled]</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier analytics --mode enabled</code></li>
 </ul>
@@ -353,7 +353,7 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Builds a pushable zip from the current directory.</p>
+<p>Build a pushable zip from the current directory.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier build</code></p><p>This command does the following:</p><ul>
 <li><p>Creates a temporary folder</p>
 </li>
@@ -371,7 +371,7 @@ a code {
 </li>
 </ul><p>This command is typically followed by <code>zapier upload</code>.</p><p><strong>Flags</strong></p><ul>
 <li><code>--disable-dependency-detection</code> | Disables &quot;smart&quot; file inclusion. By default, Zapier only includes files that are required by <code>index.js</code>. If you (or your dependencies) require files dynamically (such as with <code>require(someVar)</code>), then you may see &quot;Cannot find module&quot; errors. Disabling this may make your <code>build.zip</code> too large. If that&apos;s the case, try using the <code>includeInBuild</code> option in your <code>.zapierapprc</code>. <a href="includeInBuild">See the docs</a> for more info.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -391,13 +391,13 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Converts a Legacy Web Builder or Visual Builder app to a CLI app.</p>
+<p>Convert a Legacy Web Builder or Visual Builder integration to a CLI integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier convert INTEGRATIONID PATH</code></p><p>If you&apos;re converting a <strong>Legacy Web Builder</strong> app: the new app contains code stubs only. It is supposed to get you started - it isn&apos;t going to create a complete app!</p><p>After running this, you&apos;ll have a new app in your directory, with stubs for your trigger and actions.  If you re-run this command on an existing directory it will leave existing files alone and not clobber them.</p><p>If you&apos;re converting a <strong>Visual Builder</strong> app, then it will be identical and ready to push and use immediately!</p><p>You&apos;ll need to do a <code>zapier push</code> before the new version is visible in the editor, but otherwise you&apos;re good to go.</p><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>integrationId</code> | To get the integration id, go to &quot;<a href="https://zapier.com/app/developer&quot;">https://zapier.com/app/developer&quot;</a>, click on an integration, and copy the number directly  after &quot;/app/&quot; in the url.</li>
 <li>(required) <code>path</code> | Relative to your current path - IE: <code>.</code> for current directory</li>
 </ul><p><strong>Flags</strong></p><ul>
 <li><code>-v, --version</code> | Convert a specific version. Required when converting a Visual Builder app</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -417,9 +417,9 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Deletes your integration (including all versions).</p>
+<p>Delete your integration (including all versions).</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier delete:integration</code></p><p>This only works if there are no active users or Zaps on any version. If you only want to delete certain versions, use the <code>zapier delete:version</code> command instead. It&apos;s unlikely that you&apos;ll be able to run this on an app that you&apos;ve pushed publicly, since there are usually still users.</p><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>delete:app</code></li>
 </ul>
@@ -441,11 +441,11 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Deletes a specific version of your integration.</p>
+<p>Delete a specific version of your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier delete:version VERSION</code></p><p>This only works if there are no users or Zaps on that version. You will probably need to have run <code>zapier migrate</code> and <code>zapier deprecate</code> before this comand will work.</p><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>version</code> | Specify the version to delete. It must have no users or Zaps.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -465,14 +465,14 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Marks a non-production version of your integration as deprecated, with removal by a certain date.</p>
+<p>Mark a non-production version of your integration as deprecated, with removal by a certain date.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier deprecate VERSION DATE</code></p><p>Use this when an integration version will not be supported or start breaking at a known date.</p><p>Zapier will send an email warning users of the deprecation once a date is set, they&apos;ll start seeing it as &quot;Deprecated&quot; in the UI, and once the deprecation date arrives, if the Zaps weren&apos;t updated, they&apos;ll be paused and the users will be emailed again explaining what happened.</p><p>After the deprecation date has passed it will be safe to delete that integration version.</p><blockquote>
 <p>Do not use this if you have non-breaking changes, such as fixing help text.</p>
 </blockquote><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>version</code> | The version to deprecate.</li>
 <li>(required) <code>date</code> | The date (YYYY-MM-DD) when Zapier will make the specified version unavailable.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier deprecate 1.2.3 2011-10-01</code></li>
 </ul>
@@ -494,8 +494,8 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Describes the current integraiton.</p>
-</blockquote><p><strong>Usage</strong>: <code>zapier describe</code></p><p>Prints a human readable enumeration of your integrations&apos;s triggers, searches, and creates as seen by Zapier. Useful to understand how your resources convert and relate to different actions.</p><ul>
+<p>Describe the current integraiton.</p>
+</blockquote><p><strong>Usage</strong>: <code>zapier describe</code></p><p>This command prints a human readable enumeration of your integrations&apos;s</p><p>triggers, searches, and creates as seen by Zapier. Useful to understand how your</p><p>resources convert and relate to different actions.</p><ul>
 <li><p><code>Noun</code> -- your action&apos;s noun</p>
 </li>
 <li><p><code>Label</code> -- your action&apos;s label</p>
@@ -505,8 +505,8 @@ a code {
 <li><p><code>Available Methods</code> -- testable methods for this action</p>
 </li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -526,12 +526,12 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Gets Environment variables for a version.</p>
+<p>Get environment variables for a version.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier env:get VERSION</code></p><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>version</code> | The version to get the environment for.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier env:get 1.2.3</code></li>
 </ul>
@@ -553,12 +553,12 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Sets environment variable(s) for a version.</p>
+<p>Set environment variables for a version.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier env:set VERSION [KEY-VALUE PAIRS...]</code></p><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>version</code> | The version to set the environment for. Values are copied forward when a new version is created, but this command will only ever affect the specified version.</li>
 <li><code>key-value pairs...</code> | The key-value pairs to set. Keys are case-insensitive. Each pair should be space separated and pairs should be separated by an <code>=</code>. For example: <code>A=123 B=456</code></li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier env:set 1.2.3 SECRET=12345 OTHER=4321</code></li>
 </ul>
@@ -580,12 +580,12 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Unsets environment variable(s) for a version.</p>
+<p>Unset environment variables for a version.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier env:unset VERSION [KEYS...]</code></p><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>version</code> | The version to set the environment for.</li>
 <li><code>keys...</code> | The keys to unset. Keys are case-insensitive.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier env:unset 1.2.3 SECRET OTHER</code></li>
 </ul>
@@ -609,8 +609,8 @@ a code {
       <blockquote>
 <p>Gets the history of your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier history</code></p><p>History includes all the changes made over the lifetime of your integration. This includes everything from creation, updates, migrations, admins, and invitee changes, as well as who made the change and when.</p><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -637,7 +637,7 @@ a code {
 <li>(required) <code>path</code> | Where to create the new integration. If the directory doesn&apos;t exist, it will be created. If the directory isn&apos;t empty, we&apos;ll ask for confirmation</li>
 </ul><p><strong>Flags</strong></p><ul>
 <li><code>-t, --template</code> | The template to start your integration with. One of <code>[minimal | trigger | search | create | basic-auth | custom-auth | digest-auth | oauth2 | oauth1-trello | oauth1-tumblr | oauth1-twitter | session-auth | dynamic-dropdown | files | middleware | resource | rest-hooks | search-or-create | babel | typescript | github | onedrive]</code>. Defaults to <code>minimal</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier init ./some/path</code></li>
 <li><code>zapier init . --template typescript</code></li>
@@ -662,8 +662,8 @@ a code {
       <blockquote>
 <p>Lists any integrations that you have admin access to.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier integrations</code></p><p>This command also checks the current directory for a linked integration.</p><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>apps</code></li>
 </ul>
@@ -685,9 +685,9 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Link the current directory with an existing integration</p>
+<p>Links the current directory with an existing integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier link</code></p><p>This command generates a .zapierapprc file in the directory in which it&apos;s ran. This file ties this code to an integration and is referenced frequently during <code>push</code> and <code>validate</code> operations. This file should be checked into source control.</p><p>If you&apos;re starting an integration from scratch, use <code>zapier init</code> instead.</p><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -710,7 +710,7 @@ a code {
 <p>Configures your <code>~/.zapierrc</code> with a deploy key.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier login</code></p><p><strong>Flags</strong></p><ul>
 <li><code>-s, --sso</code> | Use this flag if you log into Zapier a Single Sign-On (SSO) button and don&apos;t have a Zapier password</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -732,7 +732,7 @@ a code {
       <blockquote>
 <p>Deactivates your acive deploy key and resets <code>~/.zapierrc</code>.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier logout</code></p><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -760,8 +760,8 @@ a code {
 <li><code>--detailed</code> | See extra info, like request/response body and headers.</li>
 <li><code>-u, --user</code> | Only show logs for this user. Defaults to your account.  Defaults to <code>me</code>.</li>
 <li><code>--limit</code> | Cap the number of logs returned. Max is 50 (also the default)  Defaults to <code>50</code>.</li>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -792,7 +792,7 @@ a code {
 <li><code>percent</code> | Percentage (between 1 and 100) of users to migrate.</li>
 </ul><p><strong>Flags</strong></p><ul>
 <li><code>--user</code> | Migrate only this user</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier migrate 1.0.0 1.0.1</code></li>
 <li><code>zapier migrate 1.0.1 2.0.0 10</code></li>
@@ -831,7 +831,7 @@ a code {
 </blockquote><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>version</code> | The version you want promote.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier promote 1.0.0</code></li>
 </ul>
@@ -853,10 +853,10 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Builds and uploads the current app.</p>
+<p>Builds and uploads the current integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier push</code></p><p>This command is the same as running <code>zapier build</code> and <code>zapier upload</code> in sequence. See those for more info.</p><p><strong>Flags</strong></p><ul>
 <li><code>--disable-dependency-detection</code> | Disables &quot;smart&quot; file inclusion. By default, Zapier only includes files that are required by <code>index.js</code>. If you (or your dependencies) require files dynamically (such as with <code>require(someVar)</code>), then you may see &quot;Cannot find module&quot; errors. Disabling this may make your <code>build.zip</code> too large. If that&apos;s the case, try using the <code>includeInBuild</code> option in your <code>.zapierapprc</code>. <a href="includeInBuild">See the docs</a> for more info.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -880,7 +880,7 @@ a code {
 </blockquote><p><strong>Usage</strong>: <code>zapier register [TITLE]</code></p><p>After running this, you can run <code>zapier push</code> to build and upload your integration for use in the Zapier editor.</p><p>This will change the  <code>./.zapierapprc</code> (which identifies this directory as holding code for a specific integration).</p><p><strong>Arguments</strong></p><ul>
 <li><code>title</code> | Your integrations&apos;s public title. Asked interactively if not present.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier register</code></li>
 <li><code>zapier register &quot;My Cool Integration&quot;</code></li>
@@ -903,7 +903,7 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Adds a starting resource, trigger, action or search to your app.</p>
+<p>Adds a starting resource, trigger, action, or search to your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier scaffold TYPE NAME</code></p><p>The first argument should one of <code>resource|trigger|search|create</code> followed by the name of the file.</p><p>The scaffold command does two general things:</p><ul>
 <li><p>Creates a new destination file like <code>resources/contact.js</code></p>
 </li>
@@ -918,7 +918,7 @@ a code {
 <li><code>-d, --dest</code> | Sets the new file&apos;s path. Use this flag when you want to create a different folder structure such as <code>src/triggers/my_trigger</code> The default destination is {type}s/{name}</li>
 <li><code>-e, --entry</code> | Where to import the new file  Defaults to <code>index.js</code>.</li>
 <li><code>-f, --force</code> | Should we overwrite an exisiting file</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier scaffold resource &quot;Contact&quot;</code></li>
 <li><code>zapier scaffold resource &quot;Contact&quot; --entry=index.js</code></li>
@@ -954,7 +954,7 @@ a code {
 <li>(required) <code>role</code> | The level the invited team member should be at. Admins can edit everything and get email updates. Subscribers only get email updates.</li>
 <li><code>message</code> | A message sent in the email to your team member, if you need to provide context. Wrap the message in quotes to ensure spaces get saved.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier team:add bruce@wayne.com admin</code></li>
 <li><code>zapier team:add alfred@wayne.com subscriber &quot;Hey Alfred, check out this app.&quot;</code></li>
@@ -979,15 +979,15 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Get a list of team members involved with your app.</p>
+<p>Get team members involved with your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier team:get</code></p><p>These users come in two levels:</p><ul>
 <li><p>Admins, who can edit everything about the app</p>
 </li>
 <li><p>Subscribers, who can&apos;t directly access the app, but will receive periodic email updates. These updates include quarterly health socores and more.</p>
 </li>
 </ul><p>Use the <code>zapier team:add</code> and <code>zapier team:remove</code> commands to modify your team.</p><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>team:list</code></li>
 </ul>
@@ -1011,7 +1011,7 @@ a code {
       <blockquote>
 <p>Remove a team member from all versions of your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier team:remove</code></p><p>Admins will immediately lose write access to the app. Subscribers won&apos;t receive future email updates.</p><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>team:delete</code></li>
 </ul>
@@ -1039,7 +1039,7 @@ a code {
 <li><code>--grep</code> | Only run tests matching pattern</li>
 <li><code>--skip-validate</code> | Forgo running <code>zapier validate</code> before <code>npm test</code></li>
 <li><code>--yarn</code> | Use yarn instead of npm</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier test</code></li>
 <li><code>zapier test -t 30000 --grep api --skip-validate</code></li>
@@ -1062,11 +1062,11 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Uploads the latest build of your app to Zapier</p>
+<p>Uploads the latest build of your integration to Zapier.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier upload</code></p><p>This command sends both build/build.zip and build/source.zip to Zapier for use.</p><blockquote>
 <p>Note: Typically we recommend using <code>zapier push</code>, which does a build and upload, rather than <code>upload</code> by itself.</p>
 </blockquote><p><strong>Flags</strong></p><ul>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -1091,8 +1091,8 @@ a code {
 <li>(required) <code>email</code> | The user to be invited. If they don&apos;t have a Zapier account, they&apos;ll be prompted to create one.</li>
 <li><code>version</code> | A version string (like 1.2.3). Optional, used only if you want to invite a user to a specific version instead of all versions.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-f, --force</code> | Skip confirmation. Useful for running programatically.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --force</code> | Skips confirmation. Useful for running programatically.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>users:invite</code></li>
 </ul>
@@ -1114,10 +1114,10 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Get a list of users who have been invited to your app.</p>
+<p>Get a list of users who have been invited to your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier users:get</code></p><p>Note that this list of users is NOT a comprehensive list of everyone who is using your integration. It only includes users who were invited directly by email (using the <code>zapier users:add</code> command or the web UI). Users who joined by clicking links generated using the <code>zapier user:links</code> command won&apos;t show up here.</p><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>users:list</code></li>
 </ul>
@@ -1139,10 +1139,10 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Get a list of links that are used to invite users to your app.</p>
+<p>Get a list of links that are used to invite users to your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier users:links</code></p><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">
@@ -1166,8 +1166,8 @@ a code {
 </blockquote><p><strong>Usage</strong>: <code>zapier users:remove EMAIL</code></p><p>When this command is run, their Zaps will immediately turn off. They won&apos;t be able to use your app again until they&apos;re re-invited or it has gone public. In practice, this command isn&apos;t run often as it&apos;s very disruptive to users.</p><p><strong>Arguments</strong></p><ul>
 <li>(required) <code>email</code> | The user to be removed.</li>
 </ul><p><strong>Flags</strong></p><ul>
-<li><code>-f, --force</code> | Skip confirmation. Useful for running programatically.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --force</code> | Skips confirmation. Useful for running programatically.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Aliases</strong></p><ul>
 <li><code>users:delete</code></li>
 </ul>
@@ -1189,11 +1189,11 @@ a code {
   <div class="row-height">
     <div class="col-md-5 col-sm-12 col-height  docs-primary">
       <blockquote>
-<p>Validates your Zapier integration.</p>
+<p>Validates your integration.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier validate</code></p><p>Runs the standard validation routine powered by json-schema that checks your integration for any structural errors. This is the same routine that runs during <code>zapier build</code>, <code>zapier upload</code>, <code>zapier push</code> or even as a test in <code>zapier test</code>.</p><p><strong>Flags</strong></p><ul>
 <li><code>--without-style</code> | Forgo pinging the Zapier server to run further checks</li>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul><p><strong>Examples</strong></p><ul>
 <li><code>zapier validate</code></li>
 <li><code>zapier validate --without-style</code></li>
@@ -1219,8 +1219,8 @@ a code {
       <blockquote>
 <p>Lists the versions of your integration available for use in the Zapier editor.</p>
 </blockquote><p><strong>Usage</strong>: <code>zapier versions</code></p><p><strong>Flags</strong></p><ul>
-<li><code>-f, --format</code> | Change the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
-<li><code>-d, --debug</code> | Show extra debugging output</li>
+<li><code>-f, --format</code> | Changes the way structured data is presented. If &quot;json&quot; or &quot;raw&quot;, you can pipe the output of the command into other tools, such as <code>jq</code>. One of <code>[plain | json | raw | row | table]</code>. Defaults to <code>table</code>.</li>
+<li><code>-d, --debug</code> | Shows extra debugging output.</li>
 </ul>
     </div>
     <div class="col-md-7 col-sm-12 col-height is-empty docs-code">

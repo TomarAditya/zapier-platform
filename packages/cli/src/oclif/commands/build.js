@@ -38,7 +38,7 @@ BuildCommand.flags = buildFlags({
     })
   }
 });
-BuildCommand.description = `Builds a pushable zip from the current directory.
+BuildCommand.description = `Build a pushable zip from the current directory.
 
 This command does the following:
 

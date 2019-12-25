@@ -12,13 +12,13 @@ $ npm install -g zapier-platform-cli
 
 ## analytics
 
-> Shows the status of the analytics that are collected. Also used to change what is collected.
+> Show the status of the analytics that are collected. Also used to change what is collected.
 
 **Usage**: `zapier analytics`
 
 **Flags**
 * `-m, --mode` | Choose how much information to share. Anonymous mode drops the OS type and Zapier user id, but keeps command info. Identifying information is used only for debugging purposes. One of `[enabled | anonymous | disabled]`.
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier analytics --mode enabled`
@@ -26,7 +26,7 @@ $ npm install -g zapier-platform-cli
 
 ## build
 
-> Builds a pushable zip from the current directory.
+> Build a pushable zip from the current directory.
 
 **Usage**: `zapier build`
 
@@ -50,12 +50,12 @@ This command is typically followed by `zapier upload`.
 
 **Flags**
 * `--disable-dependency-detection` | Disables "smart" file inclusion. By default, Zapier only includes files that are required by `index.js`. If you (or your dependencies) require files dynamically (such as with `require(someVar)`), then you may see "Cannot find module" errors. Disabling this may make your `build.zip` too large. If that's the case, try using the `includeInBuild` option in your `.zapierapprc`. [See the docs](includeInBuild) for more info.
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## convert
 
-> Converts a Legacy Web Builder or Visual Builder app to a CLI app.
+> Convert a Legacy Web Builder or Visual Builder integration to a CLI integration.
 
 **Usage**: `zapier convert INTEGRATIONID PATH`
 
@@ -73,19 +73,19 @@ You'll need to do a `zapier push` before the new version is visible in the edito
 
 **Flags**
 * `-v, --version` | Convert a specific version. Required when converting a Visual Builder app
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## delete:integration
 
-> Deletes your integration (including all versions).
+> Delete your integration (including all versions).
 
 **Usage**: `zapier delete:integration`
 
 This only works if there are no active users or Zaps on any version. If you only want to delete certain versions, use the `zapier delete:version` command instead. It's unlikely that you'll be able to run this on an app that you've pushed publicly, since there are usually still users.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `delete:app`
@@ -93,7 +93,7 @@ This only works if there are no active users or Zaps on any version. If you only
 
 ## delete:version
 
-> Deletes a specific version of your integration.
+> Delete a specific version of your integration.
 
 **Usage**: `zapier delete:version VERSION`
 
@@ -103,12 +103,12 @@ This only works if there are no users or Zaps on that version. You will probably
 * (required) `version` | Specify the version to delete. It must have no users or Zaps.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## deprecate
 
-> Marks a non-production version of your integration as deprecated, with removal by a certain date.
+> Mark a non-production version of your integration as deprecated, with removal by a certain date.
 
 **Usage**: `zapier deprecate VERSION DATE`
 
@@ -125,7 +125,7 @@ After the deprecation date has passed it will be safe to delete that integration
 * (required) `date` | The date (YYYY-MM-DD) when Zapier will make the specified version unavailable.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier deprecate 1.2.3 2011-10-01`
@@ -133,11 +133,15 @@ After the deprecation date has passed it will be safe to delete that integration
 
 ## describe
 
-> Describes the current integraiton.
+> Describe the current integraiton.
 
 **Usage**: `zapier describe`
 
-Prints a human readable enumeration of your integrations's triggers, searches, and creates as seen by Zapier. Useful to understand how your resources convert and relate to different actions.
+This command prints a human readable enumeration of your integrations's
+
+triggers, searches, and creates as seen by Zapier. Useful to understand how your
+
+resources convert and relate to different actions.
 
 * `Noun` -- your action's noun
 
@@ -148,13 +152,13 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 * `Available Methods` -- testable methods for this action
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## env:get
 
-> Gets Environment variables for a version.
+> Get environment variables for a version.
 
 **Usage**: `zapier env:get VERSION`
 
@@ -162,8 +166,8 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 * (required) `version` | The version to get the environment for.
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier env:get 1.2.3`
@@ -171,7 +175,7 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 
 ## env:set
 
-> Sets environment variable(s) for a version.
+> Set environment variables for a version.
 
 **Usage**: `zapier env:set VERSION [KEY-VALUE PAIRS...]`
 
@@ -180,7 +184,7 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 * `key-value pairs...` | The key-value pairs to set. Keys are case-insensitive. Each pair should be space separated and pairs should be separated by an `=`. For example: `A=123 B=456`
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier env:set 1.2.3 SECRET=12345 OTHER=4321`
@@ -188,7 +192,7 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 
 ## env:unset
 
-> Unsets environment variable(s) for a version.
+> Unset environment variables for a version.
 
 **Usage**: `zapier env:unset VERSION [KEYS...]`
 
@@ -197,7 +201,7 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 * `keys...` | The keys to unset. Keys are case-insensitive.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier env:unset 1.2.3 SECRET OTHER`
@@ -212,8 +216,8 @@ Prints a human readable enumeration of your integrations's triggers, searches, a
 History includes all the changes made over the lifetime of your integration. This includes everything from creation, updates, migrations, admins, and invitee changes, as well as who made the change and when.
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## init
@@ -231,7 +235,7 @@ After running this, you'll have a new example integration in your directory. If 
 
 **Flags**
 * `-t, --template` | The template to start your integration with. One of `[minimal | trigger | search | create | basic-auth | custom-auth | digest-auth | oauth2 | oauth1-trello | oauth1-tumblr | oauth1-twitter | session-auth | dynamic-dropdown | files | middleware | resource | rest-hooks | search-or-create | babel | typescript | github | onedrive]`. Defaults to `minimal`.
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier init ./some/path`
@@ -247,8 +251,8 @@ After running this, you'll have a new example integration in your directory. If 
 This command also checks the current directory for a linked integration.
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `apps`
@@ -256,7 +260,7 @@ This command also checks the current directory for a linked integration.
 
 ## link
 
-> Link the current directory with an existing integration
+> Links the current directory with an existing integration.
 
 **Usage**: `zapier link`
 
@@ -265,7 +269,7 @@ This command generates a .zapierapprc file in the directory in which it's ran. T
 If you're starting an integration from scratch, use `zapier init` instead.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## login
@@ -276,7 +280,7 @@ If you're starting an integration from scratch, use `zapier init` instead.
 
 **Flags**
 * `-s, --sso` | Use this flag if you log into Zapier a Single Sign-On (SSO) button and don't have a Zapier password
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## logout
@@ -286,7 +290,7 @@ If you're starting an integration from scratch, use `zapier init` instead.
 **Usage**: `zapier logout`
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## logs
@@ -304,8 +308,8 @@ Logs are created when your integration is run as part of a Zap. They come from e
 * `--detailed` | See extra info, like request/response body and headers.
 * `-u, --user` | Only show logs for this user. Defaults to your account.  Defaults to `me`.
 * `--limit` | Cap the number of logs returned. Max is 50 (also the default)  Defaults to `50`.
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## migrate
@@ -333,7 +337,7 @@ Note: since a migration is only for non-breaking changes, users are not emailed 
 
 **Flags**
 * `--user` | Migrate only this user
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier migrate 1.0.0 1.0.1`
@@ -365,7 +369,7 @@ Promotes are an inherently safe operation for all existing users of your integra
 * (required) `version` | The version you want promote.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier promote 1.0.0`
@@ -373,7 +377,7 @@ Promotes are an inherently safe operation for all existing users of your integra
 
 ## push
 
-> Builds and uploads the current app.
+> Builds and uploads the current integration.
 
 **Usage**: `zapier push`
 
@@ -381,7 +385,7 @@ This command is the same as running `zapier build` and `zapier upload` in sequen
 
 **Flags**
 * `--disable-dependency-detection` | Disables "smart" file inclusion. By default, Zapier only includes files that are required by `index.js`. If you (or your dependencies) require files dynamically (such as with `require(someVar)`), then you may see "Cannot find module" errors. Disabling this may make your `build.zip` too large. If that's the case, try using the `includeInBuild` option in your `.zapierapprc`. [See the docs](includeInBuild) for more info.
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## register
@@ -398,7 +402,7 @@ This will change the  `./.zapierapprc` (which identifies this directory as holdi
 * `title` | Your integrations's public title. Asked interactively if not present.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier register`
@@ -407,7 +411,7 @@ This will change the  `./.zapierapprc` (which identifies this directory as holdi
 
 ## scaffold
 
-> Adds a starting resource, trigger, action or search to your app.
+> Adds a starting resource, trigger, action, or search to your integration.
 
 **Usage**: `zapier scaffold TYPE NAME`
 
@@ -431,7 +435,7 @@ You can mix and match several options to customize the created scaffold for your
 * `-d, --dest` | Sets the new file's path. Use this flag when you want to create a different folder structure such as `src/triggers/my_trigger` The default destination is {type}s/{name}
 * `-e, --entry` | Where to import the new file  Defaults to `index.js`.
 * `-f, --force` | Should we overwrite an exisiting file
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier scaffold resource "Contact"`
@@ -460,7 +464,7 @@ Team members can be freely added and removed.
 * `message` | A message sent in the email to your team member, if you need to provide context. Wrap the message in quotes to ensure spaces get saved.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier team:add bruce@wayne.com admin`
@@ -472,7 +476,7 @@ Team members can be freely added and removed.
 
 ## team:get
 
-> Get a list of team members involved with your app.
+> Get team members involved with your integration.
 
 **Usage**: `zapier team:get`
 
@@ -485,8 +489,8 @@ These users come in two levels:
 Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `team:list`
@@ -501,7 +505,7 @@ Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 Admins will immediately lose write access to the app. Subscribers won't receive future email updates.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `team:delete`
@@ -520,7 +524,7 @@ This command is effectively the same as `npm test`, except we also validate your
 * `--grep` | Only run tests matching pattern
 * `--skip-validate` | Forgo running `zapier validate` before `npm test`
 * `--yarn` | Use yarn instead of npm
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier test`
@@ -529,7 +533,7 @@ This command is effectively the same as `npm test`, except we also validate your
 
 ## upload
 
-> Uploads the latest build of your app to Zapier
+> Uploads the latest build of your integration to Zapier.
 
 **Usage**: `zapier upload`
 
@@ -538,7 +542,7 @@ This command sends both build/build.zip and build/source.zip to Zapier for use.
 > Note: Typically we recommend using `zapier push`, which does a build and upload, rather than `upload` by itself.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## users:add
@@ -556,8 +560,8 @@ Invited users will be able to see your integration's name, logo, and description
 * `version` | A version string (like 1.2.3). Optional, used only if you want to invite a user to a specific version instead of all versions.
 
 **Flags**
-* `-f, --force` | Skip confirmation. Useful for running programatically.
-* `-d, --debug` | Show extra debugging output
+* `-f, --force` | Skips confirmation. Useful for running programatically.
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `users:invite`
@@ -565,15 +569,15 @@ Invited users will be able to see your integration's name, logo, and description
 
 ## users:get
 
-> Get a list of users who have been invited to your app.
+> Get a list of users who have been invited to your integration.
 
 **Usage**: `zapier users:get`
 
 Note that this list of users is NOT a comprehensive list of everyone who is using your integration. It only includes users who were invited directly by email (using the `zapier users:add` command or the web UI). Users who joined by clicking links generated using the `zapier user:links` command won't show up here.
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `users:list`
@@ -581,13 +585,13 @@ Note that this list of users is NOT a comprehensive list of everyone who is usin
 
 ## users:links
 
-> Get a list of links that are used to invite users to your app.
+> Get a list of links that are used to invite users to your integration.
 
 **Usage**: `zapier users:links`
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 
 ## users:remove
@@ -602,8 +606,8 @@ When this command is run, their Zaps will immediately turn off. They won't be ab
 * (required) `email` | The user to be removed.
 
 **Flags**
-* `-f, --force` | Skip confirmation. Useful for running programatically.
-* `-d, --debug` | Show extra debugging output
+* `-f, --force` | Skips confirmation. Useful for running programatically.
+* `-d, --debug` | Shows extra debugging output.
 
 **Aliases**
 * `users:delete`
@@ -611,7 +615,7 @@ When this command is run, their Zaps will immediately turn off. They won't be ab
 
 ## validate
 
-> Validates your Zapier integration.
+> Validates your integration.
 
 **Usage**: `zapier validate`
 
@@ -619,8 +623,8 @@ Runs the standard validation routine powered by json-schema that checks your int
 
 **Flags**
 * `--without-style` | Forgo pinging the Zapier server to run further checks
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.
 
 **Examples**
 * `zapier validate`
@@ -635,5 +639,5 @@ Runs the standard validation routine powered by json-schema that checks your int
 **Usage**: `zapier versions`
 
 **Flags**
-* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Changes the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as `jq`. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Shows extra debugging output.

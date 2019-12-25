@@ -23,7 +23,7 @@ class PushCommand extends ZapierBaseCommand {
 }
 
 PushCommand.flags = BuildCommand.flags;
-PushCommand.description = `Builds and uploads the current app.
+PushCommand.description = `Builds and uploads the current integration.
 
 This command is the same as running \`zapier build\` and \`zapier upload\` in sequence. See those for more info.`;
 

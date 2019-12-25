@@ -42,7 +42,7 @@ class LinkCommand extends BaseCommand {
 }
 
 LinkCommand.flags = buildFlags();
-LinkCommand.description = `Link the current directory with an existing integration
+LinkCommand.description = `Links the current directory with an existing integration.
 
 This command generates a ${CURRENT_APP_FILE} file in the directory in which it's ran. This file ties this code to an integration and is referenced frequently during \`push\` and \`validate\` operations. This file should be checked into source control.
 

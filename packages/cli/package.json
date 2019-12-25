@@ -92,10 +92,16 @@
     },
     "topics": {
       "delete": {
-        "description": "Delete your entire integration or a specific integration version"
+        "description": "Delete your entire integration or a specific integration version."
       },
       "env": {
-        "description": "Interact with your integration's environment"
+        "description": "Interact with your integration's environment."
+      },
+      "team": {
+        "description": "Add, remove, get team members of your integration."
+      },
+      "users": {
+        "description": "Add, remove, get invited users of your integration."
       }
     }
   }

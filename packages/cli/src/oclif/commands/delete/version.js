@@ -26,7 +26,7 @@ DeleteVersionCommand.args = [
   }
 ];
 DeleteVersionCommand.flags = buildFlags();
-DeleteVersionCommand.description = `Deletes a specific version of your integration.
+DeleteVersionCommand.description = `Delete a specific version of your integration.
 
 This only works if there are no users or Zaps on that version. You will probably need to have run \`${cyan(
   'zapier migrate'
